@@ -14,15 +14,21 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        if (inputs.shoot)
-        {
-            if (Camera.main == null) return;
+        HandleShoot();
+    }
 
-            if (Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out RaycastHit hit))                         
-            {
-                Debug.Log(hit.collider.gameObject.name);
-                inputs.shoot = false;
-            } 
-        }
+    void HandleShoot()
+    {
+        if (!inputs.shoot) return;
+        
+        if (Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out RaycastHit hit))                         
+        {
+            EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
+            
+            if(enemyHealth)
+                enemyHealth.TakeDamage();
+                
+            inputs.shoot = false;
+        } 
     }
 }
