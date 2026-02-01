@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Animator animator;
+    public ParticleSystem particle; 
     StarterAssetsInputs inputs;
+
+    const string SHOOT_STRING = "Shoot";
 
     void Awake()
     {
@@ -21,14 +25,16 @@ public class Weapon : MonoBehaviour
     {
         if (!inputs.shoot) return;
         
+        particle.Play();
+        animator.Play(SHOOT_STRING, 0, 0f);
+
         if (Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out RaycastHit hit))                         
         {
             EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
             
             if(enemyHealth)
-                enemyHealth.TakeDamage();
-                
-            inputs.shoot = false;
+                enemyHealth.TakeDamage();     
         } 
+        inputs.shoot = false;
     }
 }
