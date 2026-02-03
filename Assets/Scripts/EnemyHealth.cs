@@ -10,10 +10,10 @@ public class EnemyHealth : MonoBehaviour
 
     const string HIT_STRING = "Hit";
 
-    public void TakeDamage()
+    public void TakeDamage(int damageTaken)
     {
         animator.Play(HIT_STRING, 0, 0f);
-        health -= 30;
+        health -= damageTaken;
         if(health <= 0) 
             isDead = true;     
         if(isDead) 

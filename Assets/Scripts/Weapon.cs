@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public WeaponSO weaponSO;
     public GameObject hitParticle;
     public Animator animator;
     public ParticleSystem particle; 
@@ -36,7 +37,7 @@ public class Weapon : MonoBehaviour
             EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
             
             if(enemyHealth)
-                enemyHealth.TakeDamage();     
+                enemyHealth.TakeDamage(weaponSO.Damage);     
         } 
         inputs.shoot = false;
     }

@@ -267,6 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf02e5a1ead4a0f4883116f3453288bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSO: {fileID: 11400000, guid: 2568a571e2ab6314e9c1a57e4ee1e5e3, type: 2}
   hitParticle: {fileID: 320673526135221070, guid: e90a40e7db14b8945b549dc21eb558cf,
     type: 3}
   animator: {fileID: 719220978}
