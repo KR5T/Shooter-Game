@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   Damage: 30
-  FireRate: 0.5
+  FireRate: 0.25
   hitParticle: {fileID: 320673526135221070, guid: e90a40e7db14b8945b549dc21eb558cf,
     type: 3}

@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Machine Gun
   m_EditorClassIdentifier: 
   Damage: 30
-  FireRate: 0.2
+  FireRate: 0.3
+  hitParticle: {fileID: 320673526135221070, guid: e90a40e7db14b8945b549dc21eb558cf,
+    type: 3}
+  IsAutomatic: 1

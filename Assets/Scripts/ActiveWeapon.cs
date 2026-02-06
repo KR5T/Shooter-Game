@@ -12,7 +12,7 @@ public class ActiveWeapon : MonoBehaviour
     Weapon activeWeapon;
     
     const string SHOOT_STRING = "Shoot";
-    float cooldownTime = 0f;
+    float currentTime = 0f;
 
     void Awake()
     {
@@ -27,18 +27,20 @@ public class ActiveWeapon : MonoBehaviour
 
     void Update()
     {
-        cooldownTime += Time.deltaTime;
+        currentTime += Time.deltaTime;
         HandleShoot();
     }
 
     void HandleShoot()
     {
         if (!inputs.shoot ) return;
-        if(cooldownTime>=weaponSO.FireRate){
-            cooldownTime = 0f;
+        
+        if(currentTime>=weaponSO.FireRate){
+            currentTime = 0f;
             activeWeapon.Shoot(weaponSO);
             animator.Play(SHOOT_STRING, 0, 0f);
         }
-        inputs.shoot = false;
+        if(!weaponSO.IsAutomatic)
+            inputs.shoot = false;
     }
 }
