@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 100
   FireRate: 1
+  hitParticle: {fileID: 320673526135221070, guid: e90a40e7db14b8945b549dc21eb558cf,
+    type: 3}
+  IsAutomatic: 0
