@@ -3,12 +3,22 @@ guid: d9591b5a3c0f59c4ebf98a0c69e59394
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkoDecoWall
+    second: {fileID: 2100000, guid: c9175e74a5cb03c458f36add9a5fd4f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DarkoDecoWall&Win
+    second: {fileID: 2100000, guid: fb47dbe0b77022c4e8720fe4267521dc, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
