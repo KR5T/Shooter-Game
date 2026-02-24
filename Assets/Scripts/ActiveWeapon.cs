@@ -43,4 +43,9 @@ public class ActiveWeapon : MonoBehaviour
         if(!weaponSO.IsAutomatic)
             inputs.shoot = false;
     }
+
+    public void SwitchWeapon(WeaponSO weaponSO)
+    {
+        Debug.Log("Player picked up" +weaponSO.name);
+    }
 }
