@@ -17,7 +17,7 @@ public class ActiveWeapon : MonoBehaviour
     void Awake()
     {
         inputs = GetComponentInParent<StarterAssetsInputs>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Start()

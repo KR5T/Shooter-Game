@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e2a11dcd136ba04b83f878386b7bb83
+guid: 838ed5dd8f4a69b4a96b2a15e886aa38
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: CrimsonDeagle
-    second: {fileID: 2100000, guid: 30fa7bac458cc2a4a827d2f6ff636155, type: 2}
+      name: Uzi Material
+    second: {fileID: 2100000, guid: 6466568d3e9a32743a48d7ef2b0a7e53, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,7 +42,7 @@ ModelImporter:
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
