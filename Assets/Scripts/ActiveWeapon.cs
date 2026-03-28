@@ -38,6 +38,8 @@ public class ActiveWeapon : MonoBehaviour
         if(currentTime>=weaponSO.FireRate){
             currentTime = 0f;
             activeWeapon.Shoot(weaponSO);
+            // if(animator == null)
+            //     Awake();
             animator.Play(SHOOT_STRING, 0, 0f);
         }
         if(!weaponSO.IsAutomatic)
@@ -46,6 +48,13 @@ public class ActiveWeapon : MonoBehaviour
 
     public void SwitchWeapon(WeaponSO weaponSO)
     {
-        Debug.Log("Player picked up" +weaponSO.name);
+        if (activeWeapon)
+        {
+            Destroy(activeWeapon.gameObject);
+        }
+        Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
+        activeWeapon = newWeapon;
+        this.weaponSO = weaponSO;
+        animator = activeWeapon.GetComponentInChildren<Animator>();
     }
 }

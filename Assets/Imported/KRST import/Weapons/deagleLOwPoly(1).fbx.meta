@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e2a11dcd136ba04b83f878386b7bb83
+guid: 0142d2dfd318b8143888c6644a1bb049
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -38,7 +38,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Shoot
+      name: DeagleShoot
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 0
