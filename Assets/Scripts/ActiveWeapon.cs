@@ -12,6 +12,7 @@ public class ActiveWeapon : MonoBehaviour
     Weapon activeWeapon;
     
     const string SHOOT_STRING = "Shoot";
+    const string PICKUP_STRING = "Pickup";
     float currentTime = 0f;
 
     void Awake()
@@ -56,5 +57,6 @@ public class ActiveWeapon : MonoBehaviour
         activeWeapon = newWeapon;
         this.weaponSO = weaponSO;
         animator = activeWeapon.GetComponentInChildren<Animator>();
+        animator.Play(PICKUP_STRING);
     }
 }
