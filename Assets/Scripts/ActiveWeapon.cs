@@ -30,6 +30,7 @@ public class ActiveWeapon : MonoBehaviour
     {
         currentTime += Time.deltaTime;
         HandleShoot();
+        HandleZoom();
     }
 
     void HandleShoot()
@@ -58,5 +59,19 @@ public class ActiveWeapon : MonoBehaviour
         this.weaponSO = weaponSO;
         animator = activeWeapon.GetComponentInChildren<Animator>();
         animator.Play(PICKUP_STRING);
+    }
+
+    public void HandleZoom()
+    {
+        if(!weaponSO.canZoom)
+            return;
+        if (inputs.zoom)
+        {
+            Debug.Log("Zoom In");
+        }
+        else
+        {
+            Debug.Log("No zoom");
+        }
     }
 }

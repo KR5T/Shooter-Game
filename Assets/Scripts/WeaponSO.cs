@@ -8,4 +8,5 @@ public class WeaponSO : ScriptableObject
     public float FireRate = .5f;
     public GameObject hitParticle;
     public bool IsAutomatic = false;
+    public bool canZoom = false;
 }
