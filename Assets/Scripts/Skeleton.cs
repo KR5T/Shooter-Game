@@ -24,7 +24,7 @@ public class Skeleton : Enemy
 
     protected override void OnAttack()
     {
-        animator.Play("Slash");
+        animator.Play("Attack");
     }
 
     protected override void OnIdle()

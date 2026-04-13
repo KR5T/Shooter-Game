@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9bb554f4c6dfcc64fac1684445bfb736
+guid: 1948e93ff2396834e8031858b5e23ece
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Skeleton Slash
+      name: Standing Idle
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 45
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
