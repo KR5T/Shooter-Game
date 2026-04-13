@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using StarterAssets;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,15 +10,19 @@ public class ActiveWeapon : MonoBehaviour
     public WeaponSO weaponSO;
     Animator animator;
     StarterAssetsInputs inputs;
+    FirstPersonController controller;
     Weapon activeWeapon;
+    public GameObject zoomCroos, crossHair; 
     
     const string SHOOT_STRING = "Shoot";
     const string PICKUP_STRING = "Pickup";
     float currentTime = 0f;
+    float trueFOV = 40f;
 
     void Awake()
     {
         inputs = GetComponentInParent<StarterAssetsInputs>();
+        controller = GetComponentInParent<FirstPersonController>();
         animator = GetComponentInChildren<Animator>();
     }
 
@@ -61,17 +66,30 @@ public class ActiveWeapon : MonoBehaviour
         animator.Play(PICKUP_STRING);
     }
 
+    public CinemachineVirtualCamera virtualCamera;
+    public float zoomInValue = .3f, zoomOutValue = 1f;
+
     public void HandleZoom()
     {
-        if(!weaponSO.canZoom)
+        if (!weaponSO.canZoom)
+        {
+            crossHair.SetActive(true);
             return;
+        }
+        else 
+            crossHair.SetActive(false);
+            
         if (inputs.zoom)
         {
-            Debug.Log("Zoom In");
+            virtualCamera.m_Lens.FieldOfView = weaponSO.zoomAmount;
+            zoomCroos.SetActive(true);
+            controller.RotationChange(zoomInValue);
         }
         else
         {
-            Debug.Log("No zoom");
+            virtualCamera.m_Lens.FieldOfView = trueFOV;
+            zoomCroos.SetActive(false);
+            controller.RotationChange(zoomOutValue);
         }
     }
 }

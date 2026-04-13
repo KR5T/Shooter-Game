@@ -9,4 +9,5 @@ public class WeaponSO : ScriptableObject
     public GameObject hitParticle;
     public bool IsAutomatic = false;
     public bool canZoom = false;
+    public float zoomAmount = 10f;
 }

@@ -74,6 +74,11 @@ namespace StarterAssets
 
 		private const float _threshold = 0.01f;
 
+		public void RotationChange(float changeValue)
+		{
+			RotationSpeed = changeValue;
+		}
+
 		private bool IsCurrentDeviceMouse
 		{
 			get
