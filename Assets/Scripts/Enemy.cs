@@ -6,21 +6,25 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    FirstPersonController player;
-    NavMeshAgent agent;
+    protected FirstPersonController player;
+    protected NavMeshAgent agent;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         player = FindAnyObjectByType<FirstPersonController>();
     }
 
-    void Update()
+    protected virtual void Update()
     {
         agent.SetDestination(player.transform.position);
     }
+
+    protected virtual void OnAttack(){}
+    protected virtual void OnMove(){}
+    protected virtual void OnIdle(){} 
 }
