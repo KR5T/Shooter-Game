@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 9c31a788e9b56a848aa4ce991b8e9e6e
+guid: 62d5b66743dd6424486d71432bf61dc0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Katana
+    second: {fileID: 2100000, guid: fccdb45e6d5560d48a680c29787c0c04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Katana Blade
+    second: {fileID: 2100000, guid: a553fa2bc11acb5498e9740ad6ca0221, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,11 +43,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Deagle Grab
+      name: Katana Slash
       takeName: Scene
       internalID: -623603649343465320
-      firstFrame: 0
-      lastFrame: 45
+      firstFrame: 1
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,11 +66,27 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.3253012
+        functionName: EnableDamage
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: cf02e5a1ead4a0f4883116f3453288bf,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4939759
+        functionName: DisableDamage
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: cf02e5a1ead4a0f4883116f3453288bf,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []

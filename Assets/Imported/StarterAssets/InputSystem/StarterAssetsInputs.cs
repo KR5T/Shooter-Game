@@ -14,6 +14,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool shoot;
 		public bool zoom;
+		public bool slash;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -53,6 +54,11 @@ namespace StarterAssets
 		{
 			ZoomInput(value.isPressed);
 		}
+		public void OnSlash(InputValue value)
+		{
+			SlashInput(value.isPressed);
+		}
+
 #endif
 
 
@@ -84,6 +90,11 @@ namespace StarterAssets
 		public void ZoomInput(bool newZoomInput)
 		{
 			zoom = newZoomInput;
+		}
+
+		public void SlashInput(bool newSlashInput)
+		{
+			slash = newSlashInput;
 		}
 		
 		private void OnApplicationFocus(bool hasFocus)

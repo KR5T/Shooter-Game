@@ -10,4 +10,6 @@ public class WeaponSO : ScriptableObject
     public bool IsAutomatic = false;
     public bool canZoom = false;
     public float zoomAmount = 10f;
+    public enum PlayerState {Gun, Melee}
+    public PlayerState currentState;
 }

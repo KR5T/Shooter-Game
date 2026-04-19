@@ -24,7 +24,9 @@ public class Skeleton : Enemy
 
     protected override void OnAttack()
     {
-        animator.Play("Attack");
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isIdle", false);
+        animator.SetTrigger("TriggerAttack");
     }
 
     protected override void OnIdle()
@@ -34,8 +36,7 @@ public class Skeleton : Enemy
     }
 
     protected override void OnMove()
-    {
-        animator.SetBool("isIdle", false);
+    {        animator.SetBool("isIdle", false);
         animator.SetBool("isRunning", true);
     }
 }

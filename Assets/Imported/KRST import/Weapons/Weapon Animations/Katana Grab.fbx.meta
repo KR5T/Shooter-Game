@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c31a788e9b56a848aa4ce991b8e9e6e
+guid: 4e85403bfae423f4c9aa2b38466966dc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Deagle Grab
+      name: Katana Grab
       takeName: Scene
       internalID: -623603649343465320
-      firstFrame: 0
-      lastFrame: 45
+      firstFrame: 1
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

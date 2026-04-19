@@ -29,6 +29,7 @@ public class ActiveWeapon : MonoBehaviour
     void Start()
     {
         activeWeapon = GetComponentInChildren<Weapon>();
+        activeWeapon.SetWeaponSO(weaponSO);
     }
 
     void Update()
@@ -36,11 +37,12 @@ public class ActiveWeapon : MonoBehaviour
         currentTime += Time.deltaTime;
         HandleShoot();
         HandleZoom();
+        HandleSlash();
     }
 
     void HandleShoot()
     {
-        if (!inputs.shoot ) return;
+        if (!inputs.shoot || weaponSO.currentState != WeaponSO.PlayerState.Gun) return;
         
         if(currentTime>=weaponSO.FireRate){
             currentTime = 0f;
@@ -53,15 +55,31 @@ public class ActiveWeapon : MonoBehaviour
             inputs.shoot = false;
     }
 
+    public void HandleSlash()
+    {
+        if(!inputs.slash || weaponSO.currentState != WeaponSO.PlayerState.Melee) return;
+
+        if(currentTime >= weaponSO.FireRate)
+        {
+            currentTime = 0f;
+            animator.SetTrigger("KatanaSlash");
+            inputs.slash = false;
+        }
+        
+    }
+
     public void SwitchWeapon(WeaponSO weaponSO)
     {
         if (activeWeapon)
         {
             Destroy(activeWeapon.gameObject);
         }
-        Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponent<Weapon>();
+        Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponentInChildren<Weapon>();
         activeWeapon = newWeapon;
         this.weaponSO = weaponSO;
+
+        activeWeapon.SetWeaponSO(weaponSO);
+
         animator = activeWeapon.GetComponentInChildren<Animator>();
         animator.Play(PICKUP_STRING);
     }
