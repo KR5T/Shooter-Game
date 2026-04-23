@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using StarterAssets;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActiveWeapon : MonoBehaviour
 {
-    public WeaponSO weaponSO;
+    public WeaponSO startingWeaponSO;
+    WeaponSO currentWeaponSO;
     Animator animator;
     StarterAssetsInputs inputs;
     FirstPersonController controller;
     Weapon activeWeapon;
-    public GameObject zoomCroos, crossHair; 
+    public GameObject zoomCroos, crossHair, ammoIcon; 
+    public TMP_Text ammoText;
     
     const string SHOOT_STRING = "Shoot";
     const string PICKUP_STRING = "Pickup";
     float currentTime = 0f;
     float trueFOV = 40f;
+    int currentAmmo;
 
     void Awake()
     {
@@ -28,8 +32,10 @@ public class ActiveWeapon : MonoBehaviour
 
     void Start()
     {
+        currentWeaponSO = startingWeaponSO;
         activeWeapon = GetComponentInChildren<Weapon>();
-        activeWeapon.SetWeaponSO(weaponSO);
+        activeWeapon.SetWeaponSO(currentWeaponSO);
+        HandleAmmo(currentWeaponSO.magazineSize);
     }
 
     void Update()
@@ -42,30 +48,44 @@ public class ActiveWeapon : MonoBehaviour
 
     void HandleShoot()
     {
-        if (!inputs.shoot || weaponSO.currentState != WeaponSO.PlayerState.Gun) return;
+        if(currentWeaponSO.currentState == WeaponSO.PlayerState.Gun && !ammoIcon.activeSelf){ammoIcon.SetActive(true);} 
+        if (!inputs.shoot || currentWeaponSO.currentState != WeaponSO.PlayerState.Gun) return; 
         
-        if(currentTime>=weaponSO.FireRate){
+        if(currentTime>=currentWeaponSO.FireRate && currentAmmo > 0){
             currentTime = 0f;
-            activeWeapon.Shoot(weaponSO);
+            activeWeapon.Shoot(currentWeaponSO);
+            HandleAmmo(-1);
             // if(animator == null)
             //     Awake();
             animator.Play(SHOOT_STRING, 0, 0f);
         }
-        if(!weaponSO.IsAutomatic)
+        if(!currentWeaponSO.IsAutomatic)
             inputs.shoot = false;
     }
 
     public void HandleSlash()
     {
-        if(!inputs.slash || weaponSO.currentState != WeaponSO.PlayerState.Melee) return;
+        if(currentWeaponSO.currentState == WeaponSO.PlayerState.Melee && ammoIcon.activeSelf){ammoIcon.SetActive(false);} 
+        if(!inputs.slash || currentWeaponSO.currentState != WeaponSO.PlayerState.Melee) return;
 
-        if(currentTime >= weaponSO.FireRate)
+        if(currentTime >= currentWeaponSO.FireRate)
         {
             currentTime = 0f;
             animator.SetTrigger("KatanaSlash");
             inputs.slash = false;
         }
+    }
+
+    public void HandleAmmo(int amount)
+    {
+        currentAmmo += amount;
+
+        if(currentAmmo > currentWeaponSO.magazineSize)
+        {
+            currentAmmo = currentWeaponSO.magazineSize;
+        }
         
+        ammoText.text = currentAmmo.ToString();
     }
 
     public void SwitchWeapon(WeaponSO weaponSO)
@@ -76,7 +96,8 @@ public class ActiveWeapon : MonoBehaviour
         }
         Weapon newWeapon = Instantiate(weaponSO.weaponPrefab, transform).GetComponentInChildren<Weapon>();
         activeWeapon = newWeapon;
-        this.weaponSO = weaponSO;
+        this.currentWeaponSO = weaponSO;
+        HandleAmmo(currentWeaponSO.magazineSize);
 
         activeWeapon.SetWeaponSO(weaponSO);
 
@@ -89,7 +110,7 @@ public class ActiveWeapon : MonoBehaviour
 
     public void HandleZoom()
     {
-        if (!weaponSO.canZoom)
+        if (!currentWeaponSO.canZoom)
         {
             crossHair.SetActive(true);
             return;
@@ -99,7 +120,7 @@ public class ActiveWeapon : MonoBehaviour
             
         if (inputs.zoom)
         {
-            virtualCamera.m_Lens.FieldOfView = weaponSO.zoomAmount;
+            virtualCamera.m_Lens.FieldOfView = currentWeaponSO.zoomAmount;
             zoomCroos.SetActive(true);
             controller.RotationChange(zoomInValue);
         }

@@ -12,4 +12,5 @@ public class WeaponSO : ScriptableObject
     public float zoomAmount = 10f;
     public enum PlayerState {Gun, Melee}
     public PlayerState currentState;
+    public int magazineSize = 7;
 }

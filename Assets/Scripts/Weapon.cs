@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
     public void EnableDamage()
     {
         if(damageCollider == null) return;
-        hitEnemies.Clear();
+        hitEnemies.Clear(); // --> now you can hit this enemy again
         damageCollider.enabled = true;
     }
 
@@ -53,7 +53,7 @@ public class Weapon : MonoBehaviour
         
         EnemyHealth enemy = other.GetComponent<EnemyHealth>();
         
-        if (enemy != null && !hitEnemies.Contains(enemy))
+        if (enemy != null && !hitEnemies.Contains(enemy)) //--> has this enemy hit before?
         {
             hitEnemies.Add(enemy);
             enemy.TakeDamage(currentWeaponSO.Damage);

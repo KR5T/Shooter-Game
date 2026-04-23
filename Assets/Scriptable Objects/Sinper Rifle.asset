@@ -20,3 +20,6 @@ MonoBehaviour:
     type: 3}
   IsAutomatic: 0
   canZoom: 1
+  zoomAmount: 10
+  currentState: 0
+  magazineSize: 5

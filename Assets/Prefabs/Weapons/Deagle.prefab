@@ -4860,6 +4860,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 487744266607070537}
+  damageCollider: {fileID: 0}
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1001 &3595906554704363720
 PrefabInstance:
   m_ObjectHideFlags: 0
