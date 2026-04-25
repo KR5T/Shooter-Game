@@ -13,4 +13,5 @@ public class WeaponSO : ScriptableObject
     public enum PlayerState {Gun, Melee}
     public PlayerState currentState;
     public int magazineSize = 7;
+    public bool canReload = false;
 }

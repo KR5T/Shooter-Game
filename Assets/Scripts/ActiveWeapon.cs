@@ -9,7 +9,7 @@ using UnityEngine;
 public class ActiveWeapon : MonoBehaviour
 {
     public WeaponSO startingWeaponSO;
-    WeaponSO currentWeaponSO;
+    public WeaponSO currentWeaponSO;
     Animator animator;
     StarterAssetsInputs inputs;
     FirstPersonController controller;

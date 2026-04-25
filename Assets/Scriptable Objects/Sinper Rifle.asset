@@ -23,3 +23,4 @@ MonoBehaviour:
   zoomAmount: 10
   currentState: 0
   magazineSize: 5
+  canReload: 1
