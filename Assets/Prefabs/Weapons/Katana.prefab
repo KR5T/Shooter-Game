@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144324209944307018}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2144324210443158212}
   - component: {fileID: 4257368096299232143}
   - component: {fileID: 2773399712647313008}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2144324210591485300}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 2144324211857786011}
   - component: {fileID: 2144324211857786009}
   - component: {fileID: 2144324211857786010}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: katana blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 2144324211895790290}
   - component: {fileID: 2144324211895790288}
   - component: {fileID: 2144324211895790289}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: katana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5157977346226538188}
   - component: {fileID: 1364895489612442953}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Box Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

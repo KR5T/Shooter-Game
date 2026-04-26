@@ -106,6 +106,7 @@ public class ActiveWeapon : MonoBehaviour
     }
 
     public CinemachineVirtualCamera virtualCamera;
+    public Camera weaponCamera;
     public float zoomInValue = .3f, zoomOutValue = 1f;
 
     public void HandleZoom()
@@ -121,12 +122,14 @@ public class ActiveWeapon : MonoBehaviour
         if (inputs.zoom)
         {
             virtualCamera.m_Lens.FieldOfView = currentWeaponSO.zoomAmount;
+            weaponCamera.fieldOfView = currentWeaponSO.zoomAmount;
             zoomCroos.SetActive(true);
             controller.RotationChange(zoomInValue);
         }
         else
         {
             virtualCamera.m_Lens.FieldOfView = trueFOV;
+            weaponCamera.fieldOfView = trueFOV;
             zoomCroos.SetActive(false);
             controller.RotationChange(zoomOutValue);
         }

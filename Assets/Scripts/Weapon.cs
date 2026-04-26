@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     public ParticleSystem particle; 
     public Collider damageCollider;
+    CinemachineImpulseSource impulseSource;
     private HashSet<EnemyHealth> hitEnemies = new HashSet<EnemyHealth>(); //--> for prevent the spam damage
+
+    void Awake()
+    {
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+    }
 
     void Start()
     {
@@ -16,6 +23,7 @@ public class Weapon : MonoBehaviour
 
     public void Shoot(WeaponSO weaponSO)
     {
+        impulseSource.GenerateImpulse();
         if(particle != null) particle.Play();
         
         if (Physics.Raycast(Camera.main.transform.position,Camera.main.transform.forward,out RaycastHit hit))                         

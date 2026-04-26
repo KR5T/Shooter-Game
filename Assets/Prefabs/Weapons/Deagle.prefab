@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 487744266607070539}
   - component: {fileID: 487744266607070537}
   - component: {fileID: 487744266607070538}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Muzzle Flash (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,8 @@ GameObject:
   m_Component:
   - component: {fileID: 487744267643407180}
   - component: {fileID: 487744267643407179}
-  m_Layer: 3
+  - component: {fileID: 5373079592332629412}
+  m_Layer: 7
   m_Name: Deagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4861,9 +4862,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particle: {fileID: 487744266607070537}
   damageCollider: {fileID: 0}
-  interactionLayer:
+--- !u!114 &5373079592332629412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487744267643407181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd438dd108a0f284aa931a2da434f1d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -0.1, z: 0}
+  m_LayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
+  m_IgnoreTag: 
+  m_UseImpactDirection: 0
+  m_ScaleImpactWithMass: 0
+  m_ScaleImpactWithSpeed: 0
 --- !u!1001 &3595906554704363720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4946,10 +5004,70 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6879010086724453621, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5151492872390713093, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3408815776354970000, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -3348234046440496834, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -807519378981936735, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0142d2dfd318b8143888c6644a1bb049,
         type: 3}
       propertyPath: m_Name
       value: deagleLOwPoly(1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168347996988047752, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531162952742073070, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130365564810468529, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601194251582637133, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546471503844746328, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580403472891144240, guid: 0142d2dfd318b8143888c6644a1bb049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0142d2dfd318b8143888c6644a1bb049, type: 3}
