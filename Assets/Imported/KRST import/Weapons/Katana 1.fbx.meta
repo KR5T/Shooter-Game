@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 62d5b66743dd6424486d71432bf61dc0
+guid: 58802a9f32d722a47a54fd3be710cbec
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -47,7 +47,7 @@ ModelImporter:
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
-      lastFrame: 60
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -67,7 +67,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.3253012
+      - time: 0.18875502
         functionName: EnableDamage
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: cf02e5a1ead4a0f4883116f3453288bf,
@@ -75,7 +75,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.4939759
+      - time: 0.5783133
         functionName: DisableDamage
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: cf02e5a1ead4a0f4883116f3453288bf,
