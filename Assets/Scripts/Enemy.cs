@@ -24,6 +24,15 @@ public class Enemy : MonoBehaviour
         agent.SetDestination(player.transform.position);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+            enemyHealth.SelfDestruct();
+        }
+    }
+
     protected virtual void OnAttack(){}
     protected virtual void OnMove(){}
     protected virtual void OnIdle(){} 
