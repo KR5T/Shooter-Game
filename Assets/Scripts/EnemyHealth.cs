@@ -13,7 +13,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damageTaken)
     {
-        animator.Play(HIT_STRING, 0, 0f);
+        if(animator)
+            animator.Play(HIT_STRING, 0, 0f);
         health -= damageTaken;
         if(health <= 0)       
             {
