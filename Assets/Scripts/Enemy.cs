@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(!player) return;
         agent.SetDestination(player.transform.position);
     }
 
