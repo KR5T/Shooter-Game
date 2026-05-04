@@ -15,7 +15,7 @@ public class Skeleton : Enemy
     protected override void Update()
     {
         base.Update();
-        if(!player) return;
+        if(!player) return;      
         float distence = Vector3.Distance(transform.position, player.transform.position);
         if(distence>attackRange)
             OnMove();
@@ -25,6 +25,10 @@ public class Skeleton : Enemy
 
     protected override void OnAttack()
     {
+        Vector3 lookPos = player.transform.position;
+        lookPos.y = transform.position.y;
+        transform.LookAt(lookPos);
+
         animator.SetBool("isRunning", false);
         animator.SetBool("isIdle", false);
         animator.SetTrigger("TriggerAttack");
