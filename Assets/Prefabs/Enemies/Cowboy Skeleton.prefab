@@ -969,9 +969,9 @@ GameObject:
   - component: {fileID: 8377545888106554889}
   - component: {fileID: 2495884032862977135}
   - component: {fileID: 2495884032862977134}
+  - component: {fileID: 807589070}
   - component: {fileID: 2495884032862977133}
   - component: {fileID: 2495884032862977132}
-  - component: {fileID: 807589070}
   m_Layer: 0
   m_Name: Cowboy Skeleton
   m_TagString: Untagged
@@ -1054,6 +1054,23 @@ MonoBehaviour:
     type: 3}
   health: 150
   deathPositionY: 1
+--- !u!114 &807589070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019938296020969161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5d51be3504bd4f84a88ff9077ce46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformObj: {fileID: 6086711450895481336}
+  bulletPrefab: {fileID: 5175960139596077801, guid: 27c03ba4755ed8b4fbf1904297c923e3,
+    type: 3}
+  damage: 30
+  player: {fileID: 8347838457848720784, guid: 7275ff9fefc1ad641883820a5036a0f0, type: 3}
 --- !u!136 &2495884032862977133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1090,21 +1107,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &807589070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019938296020969161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da5d51be3504bd4f84a88ff9077ce46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transformObj: {fileID: 6086711450895481336}
-  bulletPrefab: {fileID: 5175960139596077801, guid: 27c03ba4755ed8b4fbf1904297c923e3,
-    type: 3}
 --- !u!1 &3038962917472748946
 GameObject:
   m_ObjectHideFlags: 0

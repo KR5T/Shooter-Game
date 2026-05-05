@@ -15,12 +15,17 @@ public class Skeleton : Enemy
     protected override void Update()
     {
         base.Update();
-        if(!player) return;      
-        float distence = Vector3.Distance(transform.position, player.transform.position);
-        if(distence>attackRange)
-            OnMove();
-        else 
-            OnAttack();
+        if (player)
+        {
+            float distence = Vector3.Distance(transform.position, player.transform.position);
+            if(distence>attackRange)
+                OnMove();
+            else 
+                OnAttack(); 
+        }     
+        else
+            OnIdle();
+        
     }
 
     protected override void OnAttack()

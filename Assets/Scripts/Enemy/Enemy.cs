@@ -21,8 +21,10 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(!player) return;
-        agent.SetDestination(player.transform.position);
+        if(player)
+            agent.SetDestination(player.transform.position);
+        else
+            agent.ResetPath();
     }
 
     void OnTriggerEnter(Collider other)
