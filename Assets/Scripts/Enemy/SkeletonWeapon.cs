@@ -6,6 +6,7 @@ public class SkeletonWeapon : MonoBehaviour
 {
     public Transform transformObj;
     public GameObject bulletPrefab;
+    public Collider weaponCollider;
     public int damage = 30;
     PlayerHealth player;
 
@@ -16,7 +17,7 @@ public class SkeletonWeapon : MonoBehaviour
 
     public void SkeletonShoot()
     {
-        if(!player) return;
+        if(!player || !bulletPrefab || !transformObj) return;
         Vector3 bulletPosition = transformObj.transform.position;
         Vector3 targetPos = player.transform.position;
 
@@ -26,5 +27,24 @@ public class SkeletonWeapon : MonoBehaviour
         newBullet.transform.LookAt(targetPos);
 
         newBullet.Init(damage);
+    }
+
+    public void EnableCollider()
+    {
+        if(weaponCollider == null) return;
+        weaponCollider.enabled = true;
+    }
+
+    public void DisableCollider()
+    {
+        weaponCollider.enabled = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<PlayerHealth>())
+        {
+            player.TakeDamage(damage);
+        }
     }
 }

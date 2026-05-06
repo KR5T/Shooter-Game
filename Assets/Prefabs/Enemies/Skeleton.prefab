@@ -1133,6 +1133,8 @@ GameObject:
   - component: {fileID: 6145266031933041547}
   - component: {fileID: 6145266031933041546}
   - component: {fileID: 6145266031933041545}
+  - component: {fileID: 8999976931072106436}
+  - component: {fileID: 4813899088582042359}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -1199,9 +1201,8 @@ MonoBehaviour:
   animator: {fileID: 298024054127375891}
   deathVFX: {fileID: 6516099677237845831, guid: 402f1e278b4bb2547b12a9e75d395a31,
     type: 3}
-  spiritParticle: {fileID: 4398051208147585661, guid: 58de002b1fb26474b910b39b019e237a,
-    type: 3}
   health: 200
+  deathPositionY: 1
 --- !u!114 &6145266031933041547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,6 +1252,38 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8999976931072106436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451748638854297299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5d51be3504bd4f84a88ff9077ce46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformObj: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  weaponCollider: {fileID: 356591448310813820}
+  damage: 30
+--- !u!54 &4813899088582042359
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451748638854297299}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6506960910863881608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,3 +2233,22 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8137791319422724144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8948186022756210017 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f95a21a4b4a9bef4b8b9fd8f8bf5bcb7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8137791319422724144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &356591448310813820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948186022756210017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.022859327, y: 0.025638644, z: 0.27231678}
+  m_Center: {x: 0.0012401639, y: -0.000027495213, z: 0.10257504}

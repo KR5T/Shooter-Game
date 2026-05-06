@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float bulletSpeed = 6f;
+    public GameObject hitParticleEffect, bloodEffect;
     Rigidbody rigby;  
     int damage;
 
@@ -26,8 +27,14 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-        if(playerHealth)
-            playerHealth.TakeDamage(damage);    
+        
+        Instantiate(hitParticleEffect, transform.position, Quaternion.identity);
+        if (playerHealth)
+        {
+            playerHealth.TakeDamage(damage);
+            Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        }
+
         Destroy(this.gameObject);
     }
 }

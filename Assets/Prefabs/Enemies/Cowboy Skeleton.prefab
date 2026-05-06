@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902a1981009881644bf8520760034fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 10
 --- !u!114 &2495884032862977134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1070,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5175960139596077801, guid: 27c03ba4755ed8b4fbf1904297c923e3,
     type: 3}
   damage: 30
-  player: {fileID: 8347838457848720784, guid: 7275ff9fefc1ad641883820a5036a0f0, type: 3}
 --- !u!136 &2495884032862977133
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1099,7 +1098,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 5
+  m_StoppingDistance: 10
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
