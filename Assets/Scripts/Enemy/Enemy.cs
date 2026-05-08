@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     protected FirstPersonController player;
     protected NavMeshAgent agent;
+    public bool isStunned = false;
 
     void Awake()
     {
@@ -21,7 +22,12 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(player)
+        RecalculatePlayerDestination();
+    }
+
+    private void RecalculatePlayerDestination()
+    {
+        if (player && !isStunned)
             agent.SetDestination(player.transform.position);
         else
             agent.ResetPath();

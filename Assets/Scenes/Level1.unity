@@ -43232,6 +43232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902a1981009881644bf8520760034fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStunned: 0
   attackRange: 2
 --- !u!136 &3435617510609942937
 CapsuleCollider:
@@ -44671,6 +44672,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 310155708075257139, guid: 7275ff9fefc1ad641883820a5036a0f0,
+        type: 3}
+      propertyPath: MoveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 310155708075257139, guid: 7275ff9fefc1ad641883820a5036a0f0,
+        type: 3}
+      propertyPath: SprintSpeed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3484474829803719689, guid: 7275ff9fefc1ad641883820a5036a0f0,
         type: 3}
       propertyPath: canvases
@@ -44709,7 +44720,7 @@ PrefabInstance:
     - target: {fileID: 7934024620475615310, guid: 7275ff9fefc1ad641883820a5036a0f0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8347838457848720784, guid: 7275ff9fefc1ad641883820a5036a0f0,
         type: 3}
@@ -44774,7 +44785,7 @@ PrefabInstance:
     - target: {fileID: 8347838458186973319, guid: 7275ff9fefc1ad641883820a5036a0f0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8347838458308760838, guid: 7275ff9fefc1ad641883820a5036a0f0,
         type: 3}
@@ -44805,7 +44816,7 @@ PrefabInstance:
         type: 3}
       propertyPath: startingWeaponSO
       value: 
-      objectReference: {fileID: 11400000, guid: 73af1a4af992c074ebcf522eaf5e0fb0,
+      objectReference: {fileID: 11400000, guid: b566763d1371aa443b82f03936addb87,
         type: 2}
     - target: {fileID: 8347838458793446967, guid: 7275ff9fefc1ad641883820a5036a0f0,
         type: 3}
