@@ -7,6 +7,7 @@ public class SkeletonWeapon : MonoBehaviour
     public Transform transformObj;
     public GameObject bulletPrefab;
     public Collider weaponCollider;
+    public ParticleSystem muzzleFlash;
     public int damage = 30;
     PlayerHealth player;
 
@@ -18,6 +19,8 @@ public class SkeletonWeapon : MonoBehaviour
     public void SkeletonShoot()
     {
         if(!player || !bulletPrefab || !transformObj) return;
+        muzzleFlash.Play();
+
         Vector3 bulletPosition = transformObj.transform.position;
         Vector3 targetPos = player.transform.position;
 
