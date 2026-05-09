@@ -1215,7 +1215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902a1981009881644bf8520760034fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStunned: 0
+  isAggro: 0
   attackRange: 2
+  detectRange: 15
+  doesItKnowPlayer: 0
+  patrolRadius: 10
+  agentWalkSpeed: 1
+  agentRunSpeed: 3.5
 --- !u!136 &6145266031933041546
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1267,6 +1274,7 @@ MonoBehaviour:
   transformObj: {fileID: 0}
   bulletPrefab: {fileID: 0}
   weaponCollider: {fileID: 356591448310813820}
+  muzzleFlash: {fileID: 0}
   damage: 30
 --- !u!54 &4813899088582042359
 Rigidbody:

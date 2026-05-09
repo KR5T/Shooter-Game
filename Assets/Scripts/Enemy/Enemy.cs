@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     protected FirstPersonController player;
     protected NavMeshAgent agent;
     public bool isStunned = false;
+    public bool isAggro = false;
 
     void Awake()
     {

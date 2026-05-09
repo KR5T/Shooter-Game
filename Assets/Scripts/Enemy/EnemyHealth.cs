@@ -21,7 +21,8 @@ public class EnemyHealth : MonoBehaviour
         if(animator)
             animator.Play(HIT_STRING, 0, 0f);
         health -= damageTaken;
-        StartCoroutine(StunCoroutine());
+        if(skeleton) 
+            StartCoroutine(StunCoroutine());
         if(health <= 0)       
             {
                 SelfDestruct();
