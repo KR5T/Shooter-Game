@@ -17,6 +17,7 @@ public class ActiveWeapon : MonoBehaviour
     public GameObject zoomCroos, crossHair, ammoIcon; 
     public TMP_Text ammoText;
     private int comboIndex = 0;
+    private bool isSlowMotion;
     
     const string SHOOT_STRING = "Shoot";
     const string PICKUP_STRING = "Pickup";
@@ -42,6 +43,7 @@ public class ActiveWeapon : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
+        TimeSlower();
         HandleShoot();
         HandleZoom();
         HandleSlash();
@@ -144,5 +146,28 @@ public class ActiveWeapon : MonoBehaviour
             zoomCroos.SetActive(false);
             controller.RotationChange(zoomOutValue);
         }
+    }  
+
+    void TimeSlower()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && !isSlowMotion)
+        {
+            StartCoroutine(TimeSlowerCoroutine());
+        }
+    }
+
+    IEnumerator TimeSlowerCoroutine()
+    {
+        isSlowMotion = true;
+
+        Time.timeScale = 0.5f;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        yield return new WaitForSecondsRealtime(.5f);
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+
+        isSlowMotion = false;
     }
 }
