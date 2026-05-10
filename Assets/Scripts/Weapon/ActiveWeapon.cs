@@ -16,6 +16,7 @@ public class ActiveWeapon : MonoBehaviour
     Weapon activeWeapon;
     public GameObject zoomCroos, crossHair, ammoIcon; 
     public TMP_Text ammoText;
+    private int comboIndex = 0;
     
     const string SHOOT_STRING = "Shoot";
     const string PICKUP_STRING = "Pickup";
@@ -71,7 +72,17 @@ public class ActiveWeapon : MonoBehaviour
         if(currentTime >= currentWeaponSO.FireRate)
         {
             currentTime = 0f;
-            animator.SetTrigger("KatanaSlash");
+
+            if (comboIndex == 0)
+            {
+                animator.SetTrigger("KatanaRight");
+                comboIndex = 1;
+            }
+            else
+            {
+                animator.SetTrigger("KatanaLeft");
+                comboIndex = 0;
+            }
             inputs.slash = false;
         }
     }

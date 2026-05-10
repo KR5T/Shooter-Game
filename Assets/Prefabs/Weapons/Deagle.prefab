@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 2124749664581074409}
   - component: {fileID: 174887709040599518}
   - component: {fileID: 8715725142776703792}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: 'Muzzle Flash '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
