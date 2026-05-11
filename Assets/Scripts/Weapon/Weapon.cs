@@ -8,11 +8,13 @@ public class Weapon : MonoBehaviour
     public ParticleSystem particle; 
     public Collider damageCollider;
     CinemachineImpulseSource impulseSource;
+    AudioSource audi;
     private HashSet<EnemyHealth> hitEnemies = new HashSet<EnemyHealth>(); //--> for prevent the spam damage
 
     void Awake()
     {
         impulseSource = GetComponent<CinemachineImpulseSource>();
+        audi = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -54,6 +56,12 @@ public class Weapon : MonoBehaviour
     public void SetWeaponSO(WeaponSO weaponSO) //--> Set Method
     {
         currentWeaponSO = weaponSO;
+    }
+
+    public void PlayWeaponSound(AudioClip audioClip)
+    {
+        if(audioClip == null) return;
+        audi.PlayOneShot(audioClip);
     }
 
     void OnTriggerEnter(Collider other)

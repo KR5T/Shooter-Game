@@ -61,6 +61,7 @@ public class ActiveWeapon : MonoBehaviour
             // if(animator == null)
             //     Awake();
             animator.Play(SHOOT_STRING, 0, 0f);
+            activeWeapon.PlayWeaponSound(currentWeaponSO.shootClip);
         }
         if(!currentWeaponSO.IsAutomatic)
             inputs.shoot = false;
@@ -78,11 +79,13 @@ public class ActiveWeapon : MonoBehaviour
             if (comboIndex == 0)
             {
                 animator.SetTrigger("KatanaRight");
+                activeWeapon.PlayWeaponSound(currentWeaponSO.shootClip);
                 comboIndex = 1;
             }
             else
             {
                 animator.SetTrigger("KatanaLeft");
+                activeWeapon.PlayWeaponSound(currentWeaponSO.shootClip);
                 comboIndex = 0;
             }
             inputs.slash = false;
@@ -163,7 +166,7 @@ public class ActiveWeapon : MonoBehaviour
         Time.timeScale = 0.5f;
         Time.fixedDeltaTime = 0.02f * Time.timeScale;
 
-        yield return new WaitForSecondsRealtime(.5f);
+        yield return new WaitForSecondsRealtime(1f);
 
         Time.timeScale = 1f;
         Time.fixedDeltaTime = 0.02f;

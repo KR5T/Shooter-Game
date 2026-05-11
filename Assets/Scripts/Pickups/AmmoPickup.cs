@@ -11,7 +11,10 @@ public class AmmoPickup : Pickup
     {
         activeWeapon.HandleAmmo(ammoAmount);
         Animator animator = activeWeapon.GetComponentInChildren<Animator>();
-        if(activeWeapon.currentWeaponSO.canReload)
+        if (activeWeapon.currentWeaponSO.canReload)
+        {
             animator.SetTrigger("Reload");
+            weapon.PlayWeaponSound(activeWeapon.currentWeaponSO.reloadClip);
+        }
     }   
 }

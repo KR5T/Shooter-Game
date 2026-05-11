@@ -14,4 +14,6 @@ public class WeaponSO : ScriptableObject
     public PlayerState currentState;
     public int magazineSize = 7;
     public bool canReload = false;
+    public AudioClip shootClip;
+    public AudioClip reloadClip;
 }

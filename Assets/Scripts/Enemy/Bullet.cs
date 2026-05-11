@@ -6,17 +6,20 @@ public class Bullet : MonoBehaviour
 {
     public float bulletSpeed = 6f;
     public GameObject hitParticleEffect, bloodEffect;
+    AudioSource audi;
     Rigidbody rigby;  
     int damage;
 
     void Awake()
     {
         rigby = GetComponent<Rigidbody>();
+        audi = GetComponent<AudioSource>();
     }
 
     void Start()
     {
         rigby.velocity = transform.forward*bulletSpeed;
+        audi.Play();
     }
     
     public void Init(int damage)

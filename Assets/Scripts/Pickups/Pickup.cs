@@ -6,6 +6,7 @@ public abstract class Pickup : MonoBehaviour
 {
     const string PLAYER_STRING = "Player";
     public float rotationSpeed = 100f;
+    protected Weapon weapon;
 
     void Update()
     {
@@ -14,6 +15,8 @@ public abstract class Pickup : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        weapon = other.GetComponentInChildren<Weapon>();
+        
         if (other.CompareTag(PLAYER_STRING))
         {
             ActiveWeapon activeWeapon = other.GetComponentInChildren<ActiveWeapon>();
